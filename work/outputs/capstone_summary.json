@@ -1,0 +1,162 @@
+{
+  "seed": 42,
+  "sklearn": "1.6.1",
+  "pages": {
+    "released": 30000,
+    "labeled": 26612,
+    "review_population": 21758,
+    "clients": 30
+  },
+  "base_rate": 0.514,
+  "pooled_results": [
+    {
+      "method": "Baseline (Week-4 rule)",
+      "P@10": 0.5,
+      "P@50": 0.68,
+      "P@100": 0.64,
+      "P@500": 0.618,
+      "lift@500": 1.2,
+      "AUC": 0.511
+    },
+    {
+      "method": "Logistic Regression",
+      "P@10": 0.7,
+      "P@50": 0.78,
+      "P@100": 0.83,
+      "P@500": 0.794,
+      "lift@500": 1.55,
+      "AUC": 0.638
+    },
+    {
+      "method": "Gradient boosting",
+      "P@10": 0.5,
+      "P@50": 0.76,
+      "P@100": 0.72,
+      "P@500": 0.71,
+      "lift@500": 1.38,
+      "AUC": 0.667
+    }
+  ],
+  "per_fold_results": [
+    {
+      "method": "Baseline (Week-4 rule)",
+      "AUC": "0.512 \u00b1 0.013",
+      "lift@top2%": "1.13 \u00b1 0.11"
+    },
+    {
+      "method": "Logistic Regression",
+      "AUC": "0.650 \u00b1 0.017",
+      "lift@top2%": "1.59 \u00b1 0.26"
+    },
+    {
+      "method": "Gradient boosting",
+      "AUC": "0.654 \u00b1 0.026",
+      "lift@top2%": "1.47 \u00b1 0.32"
+    }
+  ],
+  "lift_at_500": {
+    "Baseline (Week-4 rule)": {
+      "point": 1.2,
+      "ci95": [
+        0.92,
+        1.35
+      ]
+    },
+    "Logistic Regression": {
+      "point": 1.55,
+      "ci95": [
+        1.22,
+        1.87
+      ]
+    },
+    "Gradient boosting": {
+      "point": 1.38,
+      "ci95": [
+        1.04,
+        1.74
+      ]
+    }
+  },
+  "paired_differences_lift_at_500": {
+    "Logistic Regression minus Baseline (Week-4 rule)": {
+      "median": 0.35,
+      "ci95": [
+        0.0,
+        0.75
+      ],
+      "share_of_resamples_first_higher": 0.98
+    },
+    "Gradient boosting minus Baseline (Week-4 rule)": {
+      "median": 0.21,
+      "ci95": [
+        -0.14,
+        0.59
+      ],
+      "share_of_resamples_first_higher": 0.85
+    },
+    "Logistic Regression minus Gradient boosting": {
+      "median": 0.15,
+      "ci95": [
+        0.01,
+        0.29
+      ],
+      "share_of_resamples_first_higher": 0.98
+    }
+  },
+  "before_after_p500": {
+    "random_split": {
+      "Logistic Regression": 0.862,
+      "Gradient boosting": 0.936
+    },
+    "grouped_by_client": {
+      "Logistic Regression": 0.794,
+      "Gradient boosting": 0.71
+    }
+  },
+  "queue_top500": {
+    "reason_codes": {
+      "visibility_gaps": 204,
+      "page_age_or_length": 123,
+      "weak_position_or_ctr": 81,
+      "keyword_or_source": 69,
+      "weak_engagement": 20,
+      "volume_pattern": 3
+    },
+    "confidence": {
+      "lower": 308,
+      "higher": 192
+    },
+    "protect_check": 105
+  },
+  "cost_value_500": [
+    {
+      "500-page review list": "Model score (this queue)",
+      "decay rate": 0.794,
+      "lift": 1.55,
+      "reviews per decayed page": 1.26,
+      "share of click value": "0.4%",
+      "median impressions": 360
+    },
+    {
+      "500-page review list": "Value first (clicks x CPC)",
+      "decay rate": 0.38,
+      "lift": 0.74,
+      "reviews per decayed page": 2.63,
+      "share of click value": "86.2%",
+      "median impressions": 12389
+    },
+    {
+      "500-page review list": "Random pages (expected)",
+      "decay rate": 0.514,
+      "lift": 1.0,
+      "reviews per decayed page": 1.95,
+      "share of click value": "2.3%",
+      "median impressions": 1728
+    }
+  ],
+  "assumptions": {
+    "minutes_per_review": 15,
+    "k": 500,
+    "click_value": "clicks x CPC (proxy, not revenue)"
+  }
+}
