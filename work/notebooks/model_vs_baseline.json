@@ -1,0 +1,57 @@
+{
+  "seed": 42,
+  "review_population_pages": 21758,
+  "min_impressions_90d": 100,
+  "base_rate": 0.514,
+  "folds": 5,
+  "sklearn": "1.6.1",
+  "pooled": [
+    {
+      "method": "Baseline (Week-4 rule)",
+      "P@10": 0.5,
+      "P@50": 0.68,
+      "P@100": 0.64,
+      "P@500": 0.618,
+      "lift@500": 1.2,
+      "AUC": 0.511
+    },
+    {
+      "method": "Logistic Regression",
+      "P@10": 0.7,
+      "P@50": 0.78,
+      "P@100": 0.83,
+      "P@500": 0.794,
+      "lift@500": 1.55,
+      "AUC": 0.638
+    },
+    {
+      "method": "Gradient boosting",
+      "P@10": 0.5,
+      "P@50": 0.76,
+      "P@100": 0.72,
+      "P@500": 0.71,
+      "lift@500": 1.38,
+      "AUC": 0.667
+    }
+  ],
+  "per_fold_top2pct": [
+    {
+      "method": "Baseline (Week-4 rule)",
+      "AUC": "0.512 ± 0.013",
+      "P@top2%": "0.604 ± 0.138",
+      "lift@top2%": "1.13 ± 0.11"
+    },
+    {
+      "method": "Logistic Regression",
+      "AUC": "0.650 ± 0.017",
+      "P@top2%": "0.820 ± 0.095",
+      "lift@top2%": "1.59 ± 0.26"
+    },
+    {
+      "method": "Gradient boosting",
+      "AUC": "0.654 ± 0.026",
+      "P@top2%": "0.759 ± 0.102",
+      "lift@top2%": "1.47 ± 0.32"
+    }
+  ]
+}
